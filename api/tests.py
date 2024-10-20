@@ -247,7 +247,7 @@ class TestApiEndpoints(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         blood_request.refresh_from_db()
-        self.assertEqual(blood_request.status, 'Fullfilled')
+        self.assertEqual(blood_request.status, 'Fulfilled')
 
     def test_approve_as_regular_user(self):
         self.authenticate_as_regular_user()
