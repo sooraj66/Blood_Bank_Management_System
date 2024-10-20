@@ -1,0 +1,772 @@
+{
+	"info": {
+		"_postman_id": "c23776df-4df6-4930-a2d6-8df64e6fb3df",
+		"name": "Blood_Bank_Management_PostMan_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39141253"
+	},
+	"item": [
+		{
+			"name": "Admin  Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"testadmin5\",\r\n\"email\":\"testadmin5@gmail.com\",\r\n\"password\":\"testadmin5\",\r\n\"confirmPassword\":\"testadmin5\",\r\n\"is_staff\":true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user_register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user_register"
+					]
+				}
+			},
+			"response": [{
+				"message": "user created successfully",
+				"user": {
+					"username": "testadmin5",
+					"email": "testadmin5@gmail.com"
+				}
+			}]
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"testuser1\",\r\n\"email\":\"testuser1gmail.com\",\r\n\"password\":\"testuser1\",\r\n\"confirmPassword\":\"testuser1\",\r\n\"is_staff\":false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user_register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user_register"
+					]
+				}
+			},
+			"response": [{
+				"message": "user created successfully",
+				"user": {
+					"username": "testuser1",
+					"email": "testuser1gmail.com"
+				}
+			}]
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\":\"testadmin\",\r\n  \"password\":\"testadmin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user_login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user_login"
+					]
+				}
+			},
+			"response": [{
+				"refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMDAzNDIzNywiaWF0IjoxNzI5NDI5NDM3LCJqdGkiOiJhZDFiN2JmNDM1ZWU0MDBjYThkYzljYjEzOGNkYzdjZSIsInVzZXJfaWQiOjR9._cfrO7-kJGstm0j6DKNZ7N2f5Gu94LahoVqWfVmcm88",
+				"access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+				"user": {
+					"username": "testadmin",
+					"email": "testadmin@gmail.com"
+				}
+			}]
+		},
+		{
+			"name": "Admin Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user_logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user_logout"
+					]
+				}
+			},
+			"response": [{
+				"message": "Successfully logged out"
+			}]
+		},
+		{
+			"name": "Add Blood Type",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"O+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add_bloodtype",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add_bloodtype"
+					]
+				}
+			},
+			"response": [{
+				"message": "Blood type added successfully"
+			}]
+		},
+		{
+			"name": "Add Donor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"donor_name\":\"Erik\",\r\n\"blood_type\":\"A+\",\r\n\"units_donated\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add_donor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add_donor"
+					]
+				}
+			},
+			"response": [{
+				"message": "Donor added successfully",
+				"donor": {
+					"donor_name": "Erik",
+					"blood_type": "A+",
+					"units_donated": 3,
+					"last_donated": "2024-10-20"
+				}
+			}]
+		},
+		{
+			"name": "Update Donor Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"donor_name\":\"Siddu\",\r\n\"blood_type\":\"A+\",\r\n\"units_donated\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/update_donor/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"update_donor",
+						"4"
+					]
+				}
+			},
+			"response": [{
+				"message": "Donor details updated successfully"
+			}]
+		},
+		{
+			"name": "Delete Donor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/delete_donor/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"delete_donor",
+						"4"
+					]
+				}
+			},
+			"response": [{
+				"message": "Donor deleted successfully"
+			}]
+		},
+		{
+			"name": "Get Donor List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/getall_donors/?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"getall_donors",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [{
+				"donors": [
+					{
+						"donor_name": "Zenday",
+						"blood_type": "A+",
+						"units_donated": 4,
+						"last_donated": "2024-10-20"
+					},
+					{
+						"donor_name": "Zeny",
+						"blood_type": "A-",
+						"units_donated": 3,
+						"last_donated": "2024-10-20"
+					},
+					{
+						"donor_name": "Sid",
+						"blood_type": "A-",
+						"units_donated": 3,
+						"last_donated": "2024-10-20"
+					},
+					{
+						"donor_name": "Siddhu",
+						"blood_type": "A-",
+						"units_donated": 3,
+						"last_donated": "2024-10-20"
+					},
+					{
+						"donor_name": "Siddhhu",
+						"blood_type": "A-",
+						"units_donated": 3,
+						"last_donated": "2024-10-20"
+					}
+				],
+				"total_donors": 9,
+				"page": 1,
+				"total_pages": 2
+			}]
+		},
+		{
+			"name": "Add to Inventory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"blood_type\":\"O+\",\r\n\"quantity\" : 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add_to_bloodinventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add_to_bloodinventory"
+					]
+				}
+			},
+			"response": [{
+				"message": "Blood type with quantity added to inventory",
+				"blood_type": {
+					"id": 9,
+					"quantity": 3,
+					"blood_type": "O+"
+				}
+			}]
+		},
+		{
+			"name": "Update Unit In Inventory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"blood_type\":\"AB+\",\r\n\"quantity\" : 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/update_units/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"update_units",
+						"7"
+					]
+				}
+			},
+			"response": [{
+				"message": "Units available updated"
+			}]
+		},
+		{
+			"name": "Get Blood Inventory List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/get_bloodinventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"get_bloodinventory"
+					]
+				}
+			},
+			"response": [[
+				{
+					"id": 6,
+					"quantity": 6,
+					"blood_type": "A+"
+				},
+				{
+					"id": 7,
+					"quantity": 6,
+					"blood_type": "AB+"
+				}
+			]]
+		},
+		{
+			"name": "Blood Request by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"blood_type\" : \"A+\",\r\n\"units_requested\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/request_blood",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"request_blood"
+					]
+				}
+			},
+			"response": [{
+				"message": "Blood request can be initiated by users only"
+			}]
+		},
+		{
+			"name": "Blood Request by regular user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDM0MjQ0LCJpYXQiOjE3Mjk0MzA2NDQsImp0aSI6IjcxMjc2MjMyODE3ZTRiZjBhZmEyMmFjMjMwMzcxMzQyIiwidXNlcl9pZCI6NX0.g6k5R8BGIVe_CxTPC82IeFdom1JIloS5skD22IPyl8g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"blood_type\" : \"A+\",\r\n\"units_requested\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/request_blood",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"request_blood"
+					]
+				}
+			},
+			"response": [{
+				"message": " Request successfully approved"
+			}]
+		},
+		{
+			"name": "Request Approved by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"blood_type\": \"B-\",\r\n\"status\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/approve_request/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"approve_request",
+						"2"
+					]
+				}
+			},
+			"response": [{
+				"message": " Request successfully approved"
+			}]
+		},
+		{
+			"name": "Get All Blood Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDMzMDM3LCJpYXQiOjE3Mjk0Mjk0MzcsImp0aSI6ImYzOGRlMTZhOGE2MjQ1OGY5MTgzNjJiZTAyOGVkODNkIiwidXNlcl9pZCI6NH0.qVA9y3Sqtq60teOuZNkdvLKqdMQHi81OcwYkcX7Drjc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/get_all_blood_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"get_all_blood_request",
+						""
+					]
+				}
+			},
+			"response": [{
+				"blood_requests": [
+					{
+						"id": 1,
+						"units_requested": 2,
+						"status": "Fullfilled",
+						"user": 1,
+						"blood_type": "B-"
+					},
+					{
+						"id": 2,
+						"units_requested": 2,
+						"status": "Fullfilled",
+						"user": 2,
+						"blood_type": "B-"
+					},
+					{
+						"id": 3,
+						"units_requested": 2,
+						"status": "Fullfilled",
+						"user": 3,
+						"blood_type": "A-"
+					},
+					{
+						"id": 4,
+						"units_requested": 2,
+						"status": "Pending",
+						"user": 5,
+						"blood_type": "A+"
+					},
+					{
+						"id": 5,
+						"units_requested": 2,
+						"status": "Pending",
+						"user": 5,
+						"blood_type": "A+"
+					}
+				],
+				"total_request": 7,
+				"page": 1,
+				"total_pages": 2
+			}]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://d21a8f7b-2b5f-4119-933e-4018071fb97a.mock.pstmn.io"
+		}
+	]
+}
